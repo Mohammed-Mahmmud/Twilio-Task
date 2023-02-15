@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "64460fb4-5c87-449f-a908-cd2295a60ada",
+		"name": "TaskProject_Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/register?name=adham&mobile_number=015544551155&password=123456789",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "adham"
+						},
+						{
+							"key": "mobile_number",
+							"value": "015544551155"
+						},
+						{
+							"key": "password",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login?mobile_number=011211151515151&password=123456789",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					],
+					"query": [
+						{
+							"key": "mobile_number",
+							"value": "011211151515151"
+						},
+						{
+							"key": "password",
+							"value": "123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Profile Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
