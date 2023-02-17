@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SmsController;
-
 use App\Http\Controllers\ProfileDataController; 
 /*
 /*
@@ -20,7 +19,7 @@ use App\Http\Controllers\ProfileDataController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('admin.users.index');
 })->name('home');
 
 
@@ -41,5 +40,4 @@ Route::prefix('admin/users')->controller(UserController::class)->middleware(['we
     Route::put('/{user}', 'update')->name('admin.users.update');
     Route::delete('/{user}','delete')->name('admin.users.destroy');
     Route::post('/','store')->name('admin.users.store');
-    Route::post('/data-save','saveData')->name('data-save');
-});
+  });

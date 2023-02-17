@@ -21,18 +21,16 @@ class UserController extends Controller
         return view('admin.users.create',['user'=>$user]);
     }
 
-    public function store(Request $request,User $user)
+    public function store(Request $request)
     {
+        //chech if mobile number in required form 
+        if(preg_match('/^\+[0-9]{10,13}$/', $request->mobile_number)){
         return redirect()->route('send-sms',$request);
     }
-
-    public function saveData(Request $request,User $user){
-        $user->name = $request->name;
-        $user->mobile_number = $request->mobile_number;
-        $user->password = Hash::make($request->password);
-        $user->save();
-       return redirect()->route('home');
+    else {
+    return redirect()->route('admin.users.create')->with('failed', 'your number is wrong.');
     }
+}
 
     public function show(User $user)
     {
@@ -46,7 +44,7 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
-                $request->validate([
+          $request->validate([
             'name' => 'required|string',
             'password' => 'required|string|min:6',
             'mobile_number' => 'required|string|unique:users',
@@ -59,7 +57,7 @@ class UserController extends Controller
          return redirect()->route('admin.users.index');
         return "updated";
 }
-public function delete(Request $request,User $user)
+public function delete(User $user)
 {
     $user->delete();
     return redirect()->route('admin.users.index');

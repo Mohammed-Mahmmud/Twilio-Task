@@ -1,53 +1,24 @@
-{{-- <table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Mobile Number</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    @foreach ($users as $user)
-      <tr>
-        <td>{{ $user->name }}</td>
-        <td>{{ $user->mobile_number }}</td>
-        <td>
-          <a href="{{ route('admin.users.show', $user) }}">Show</a>
-          <a href="{{ route('admin.users.edit', $user) }}">Edit</a>
-          <form action="{{ route('admin.users.destroy', $user) }}" method="post">
-            @csrf
-            @method('delete')
-            <button type="submit">Delete</button>
-          </form>
-        </td>
-      </tr>
-    @endforeach
-  </tbody>
-</table>
-  --}}
-
-
 <title>Users</title>
 
 <tbody>
+      <form action="{{route('admin.users.create')}}">
+    <button href="{{route('admin.users.create')}}"  class="btn draw-border">Create New User</button>
+  </form>
 
 <div class="container">
    @foreach ($users as $user)
   <div class="card">
-    {{-- <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image"> --}}
+    <img src="https://lh3.googleusercontent.com/ytP9VP86DItizVX2YNA-xTYzV09IS7rh4WexVp7eilIcfHmm74B7odbcwD5DTXmL0PF42i2wnRKSFPBHlmSjCblWHDCD2oD1oaM1CGFcSd48VBKJfsCi4bS170PKxGwji8CPmehwPw=w200-h247-no" alt="Person" class="card__image">
 
-          <h1 class="">
+          <h3 class="">
       {{ $user->name }}
-      </h1>
+      </h3>
 
-      <h2 class="">
+      <div class="">
       {{ $user->mobile_number }}
-      </h2>
+      </div>
     
 
-      <form action="{{route('admin.users.create')}}">
-    <button href="{{route('admin.users.create')}}"  class="btn draw-border">New User</button>
-  </form>
 
    <form action="{{route('admin.users.show', $user)}}">
     <button href="{{ route('admin.users.show', $user) }}"  class="btn draw-border">Show</button>
