@@ -1,13 +1,8 @@
-Please make the following task using laravel 8+ (latest build):
-1- install Laravel Telescope and make sure to log all actions and error. Log every thing and send the full db dump with the task (mandatory).
-2- make all authentications with JWT.
-3- login api with mobile number and password.
-4- register a new account using mobile number, password, username (use twilio sms gateway to send sms to verify mobile number).
-5- Create API for getting profile data.
-6- Make an admin panel/Control panel with CRUD for users.
-NOTE:
--make sure You all handle user verification code  sent by sms
--make sure You all handle a not completed profile trying to login even he did not add the sms code
--make all needed validation in Admin panel
-- Do not forget to share the postman collection for the task
-- Save the dummy data by using the seeder
+Laravel Telescope Application using Authentication with JWT and Twilio SMS Verification This project is a simple Laravel
+application that demonstrates user authentication using JWT and mobile number verification with Twilio SMS Gateway. It
+also includes an admin panel with CRUD functionality for managing users and Laravel Telescope for debugging and
+tracking requests, jobs, events, notifications, cache operations, and database queries in real-time . This project is a basic
+example of how to implement user authentication with Laravel, JWT, and Twilio SMS Gateway. This can be used as a
+starting point for building more complex applications.
+![user](https://github.com/Mohammed-Mahmmud/Twilio-Task/blob/main/user.png)
+![new user](https://github.com/Mohammed-Mahmmud/Twilio-Task/blob/main/new-user.png)
